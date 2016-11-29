@@ -1,0 +1,10 @@
+libname pseduc postgres server=sbxpav14 user=dbmsowner password=xxx port=9432 database=PSEduc; 
+
+/*No Bulkload*/
+data pseduc.orsales; 
+set sashelp.orsales; 
+run; 
+/*Bulkload*/
+data pseduc.orsales (bulkload=YES BL_PSQL_PATH="c:\program files\SASHome\WebinfrastructurePlatformDataServer\9.4\bin\psql.exe"); 
+set sashelp.orsales; 
+run; 
